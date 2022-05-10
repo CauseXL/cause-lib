@@ -16,4 +16,7 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
+  "paths": {
+    "@cause_xl/compiler": ["./packages/compiler/src/index.ts"]
+  }
 }
