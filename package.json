@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@cause_xl/compiler": "workspace:*",
+    "@cause_xl/ni": "workspace:*",
+    "@types/node": "^17.0.31",
     "c8": "^7.11.2",
     "tsup": "^5.12.7",
     "typescript": "^4.5.4",

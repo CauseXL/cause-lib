@@ -1,0 +1,23 @@
+{
+  "name": "@cause_xl/ni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "ni": "bin/ni.mjs",
+    "nr": "bin/nr.mjs"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiaoliang",
+  "license": "ISC",
+  "devDependencies": {
+    "execa": "^6.1.0",
+    "fast-glob": "^3.2.11",
+    "find-up": "^6.3.0"
+  }
+}

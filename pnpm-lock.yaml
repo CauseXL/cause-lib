@@ -4,7 +4,9 @@ importers:
 
   .:
     specifiers:
-      '@cause_xl/compiler': workspace:^1.0.0
+      '@cause_xl/compiler': workspace:*
+      '@cause_xl/ni': workspace:*
+      '@types/node': ^17.0.31
       c8: ^7.11.2
       tsup: ^5.12.7
       typescript: ^4.5.4
@@ -12,6 +14,8 @@ importers:
       vitest: ^0.12.3
     devDependencies:
       '@cause_xl/compiler': link:packages/compiler
+      '@cause_xl/ni': link:packages/ni
+      '@types/node': 17.0.32
       c8: 7.11.2
       tsup: 5.12.7_typescript@4.6.4
       typescript: 4.6.4
@@ -20,6 +24,16 @@ importers:
 
   packages/compiler:
     specifiers: {}
+
+  packages/ni:
+    specifiers:
+      execa: ^6.1.0
+      fast-glob: ^3.2.11
+      find-up: ^6.3.0
+    devDependencies:
+      execa: 6.1.0
+      fast-glob: 3.2.11
+      find-up: 6.3.0
 
   playground:
     specifiers:
@@ -384,6 +398,10 @@ packages:
 
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
+    dev: true
+
+  /@types/node/17.0.32:
+    resolution: {integrity: sha512-eAIcfAvhf/BkHcf4pkLJ7ECpBAhh9kcxRBpip9cTiO+hf+aJrsxYxBeS6OXvOd9WqNAJmavXVpZvY1rBjNsXmw==}
     dev: true
 
   /@types/prop-types/15.7.5:
@@ -906,6 +924,21 @@ packages:
       strip-final-newline: 2.0.0
     dev: true
 
+  /execa/6.1.0:
+    resolution: {integrity: sha512-QVWlX2e50heYJcCPG0iWtf8r0xjEYfz/OYLGDYH+IyjWezzPNxz63qNFOu0l4YftGWuizFVZHHs8PrLU5p2IDA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      cross-spawn: 7.0.3
+      get-stream: 6.0.1
+      human-signals: 3.0.1
+      is-stream: 3.0.0
+      merge-stream: 2.0.0
+      npm-run-path: 5.1.0
+      onetime: 6.0.0
+      signal-exit: 3.0.7
+      strip-final-newline: 3.0.0
+    dev: true
+
   /fast-glob/3.2.11:
     resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
     engines: {node: '>=8.6.0'}
@@ -936,6 +969,14 @@ packages:
     dependencies:
       locate-path: 6.0.0
       path-exists: 4.0.0
+    dev: true
+
+  /find-up/6.3.0:
+    resolution: {integrity: sha512-v2ZsoEuVHYy8ZIlYqwPe/39Cy+cFDzp4dXPaxNvkEuouymu+2Jbz0PxpKarJHYJTmv2HWT3O382qY8l4jMWthw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      locate-path: 7.1.0
+      path-exists: 5.0.0
     dev: true
 
   /foreground-child/2.0.0:
@@ -1042,6 +1083,11 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
+  /human-signals/3.0.1:
+    resolution: {integrity: sha1-x0CSCFna+lDloyItqdO/S7Dl7vU=}
+    engines: {node: '>=12.20.0'}
+    dev: true
+
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
     engines: {node: '>= 4'}
@@ -1096,6 +1142,11 @@ packages:
   /is-stream/2.0.1:
     resolution: {integrity: sha1-+sHj1TuXrVqdCunO8jifWBClwHc=}
     engines: {node: '>=8'}
+    dev: true
+
+  /is-stream/3.0.0:
+    resolution: {integrity: sha1-5r/XqmvvafT0cs6btoHj5XtDGaw=}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
   /isexe/2.0.0:
@@ -1170,6 +1221,13 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /locate-path/7.1.0:
+    resolution: {integrity: sha512-HNx5uOnYeK4SxEoid5qnhRfprlJeGMzFRKPLCf/15N3/B4AiofNwC/yq7VBKdVk9dx7m+PiYCJOGg55JYTAqoQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      p-locate: 6.0.0
+    dev: true
+
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -1212,6 +1270,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /mimic-fn/4.0.0:
+    resolution: {integrity: sha1-YKkFUNXLCyOcymXYk7GlOymHHsw=}
+    engines: {node: '>=12'}
+    dev: true
+
   /minimatch/3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
@@ -1252,6 +1315,13 @@ packages:
       path-key: 3.1.1
     dev: true
 
+  /npm-run-path/5.1.0:
+    resolution: {integrity: sha512-sJOdmRGrY2sjNTRMbSvluQqg+8X7ZK61yvzBEIDhz4f8z1TZFYABsqjjCBd/0PUNE9M6QDgHJXQkGUEm7Q+l9Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      path-key: 4.0.0
+    dev: true
+
   /object-assign/4.1.1:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
     engines: {node: '>=0.10.0'}
@@ -1270,11 +1340,25 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
+  /onetime/6.0.0:
+    resolution: {integrity: sha1-fCTBjtH9LpvKS9JoBqM2E8d9NLQ=}
+    engines: {node: '>=12'}
+    dependencies:
+      mimic-fn: 4.0.0
+    dev: true
+
   /p-limit/3.1.0:
     resolution: {integrity: sha1-4drMvnjQ0TiMoYxk/qOOPlfjcGs=}
     engines: {node: '>=10'}
     dependencies:
       yocto-queue: 0.1.0
+    dev: true
+
+  /p-limit/4.0.0:
+    resolution: {integrity: sha1-kUr2VE7TK/pUZwsGHK/L0EmEtkQ=}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      yocto-queue: 1.0.0
     dev: true
 
   /p-locate/5.0.0:
@@ -1284,9 +1368,21 @@ packages:
       p-limit: 3.1.0
     dev: true
 
+  /p-locate/6.0.0:
+    resolution: {integrity: sha1-PamknUk0uQEIncozAvpl3FoFwE8=}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      p-limit: 4.0.0
+    dev: true
+
   /path-exists/4.0.0:
     resolution: {integrity: sha1-UTvb4tO5XXdi6METfvoZXGxhtbM=}
     engines: {node: '>=8'}
+    dev: true
+
+  /path-exists/5.0.0:
+    resolution: {integrity: sha1-pqrZSJIAsh+rMeSc8JJ35RFvuec=}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
   /path-is-absolute/1.0.1:
@@ -1297,6 +1393,11 @@ packages:
   /path-key/3.1.1:
     resolution: {integrity: sha1-WB9q3mWMu6ZaDTOA3ndTKVBU83U=}
     engines: {node: '>=8'}
+    dev: true
+
+  /path-key/4.0.0:
+    resolution: {integrity: sha1-KVWI3DruZBVPh3rbnXgLgcVUvxg=}
+    engines: {node: '>=12'}
     dev: true
 
   /path-parse/1.0.7:
@@ -1494,6 +1595,11 @@ packages:
   /strip-final-newline/2.0.0:
     resolution: {integrity: sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0=}
     engines: {node: '>=6'}
+    dev: true
+
+  /strip-final-newline/3.0.0:
+    resolution: {integrity: sha1-UolMMT+/8xiDUoCu1g/3Hr8SuP0=}
+    engines: {node: '>=12'}
     dev: true
 
   /sucrase/3.21.0:
@@ -1740,4 +1846,9 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=}
     engines: {node: '>=10'}
+    dev: true
+
+  /yocto-queue/1.0.0:
+    resolution: {integrity: sha1-f4FkM/ssvFEeyL99Jjw7WKGjwlE=}
+    engines: {node: '>=12.20'}
     dev: true
