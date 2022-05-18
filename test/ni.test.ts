@@ -36,6 +36,7 @@ describe("test nr", async () => {
     expect(fg.sync("packages/ni/src/command/*.ts").map((i) => i.slice(0, -3)))
       .toMatchInlineSnapshot(`
         [
+          "packages/ni/src/command/index",
           "packages/ni/src/command/ni",
           "packages/ni/src/command/nr",
         ]
