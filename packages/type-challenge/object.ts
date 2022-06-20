@@ -14,6 +14,11 @@ type PickByType<T, U> = {
   [P in keyof T as (T[P] extends U ? P : never)]: T[P] extends U ? U : never;
 };
 
+type LookUp<T, U> = T extends {
+  type: infer P
+} ? (
+  P extends U ? T : never
+) : never
 
 // * ------------------------------------------------
 
@@ -43,6 +48,19 @@ type OnlyBoolean = PickByType<
   },
   boolean
 >;
+
+interface Cat {
+  type: 'cat'
+  breeds: 'Abyssinian' | 'Shorthair' | 'Curl' | 'Bengal'
+}
+
+interface Dog {
+  type: 'dog'
+  breeds: 'Hound' | 'Brittany' | 'Bulldog' | 'Boxer'
+  color: 'brown' | 'white' | 'black'
+}
+
+type MyDog = LookUp<Cat | Dog, 'dog'> // expected to be `Dog`
 
 
 export {};
