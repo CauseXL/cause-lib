@@ -31,7 +31,7 @@ describe('test nr', () => {
 });
 
 describe("test nr", async () => {
-  const lockPath = await findUp(Object.keys(LOCKS), { cwd: process.cwd() }) || ''
+  // const lockPath = await findUp(Object.keys(LOCKS), { cwd: process.cwd() }) || ''
   it("pnpm run", async () => {
     expect(fg.sync("packages/ni/src/command/*.ts").map((i) => i.slice(0, -3)))
       .toMatchInlineSnapshot(`
@@ -41,6 +41,6 @@ describe("test nr", async () => {
           "packages/ni/src/command/nr",
         ]
       `);
-    expect(path.basename(lockPath)).toMatchInlineSnapshot('"pnpm-lock.yaml"');;
+    // expect(path.basename(lockPath)).toMatchInlineSnapshot('"pnpm-lock.yaml"');;
   });
 });

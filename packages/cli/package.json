@@ -1,0 +1,27 @@
+{
+  "name": "@cause_xl/cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "cause-cli": "bin/cli.mjs"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xiaoliang",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "inquirer": "^9.0.0",
+    "meow": "^10.1.2",
+    "ncp": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.1",
+    "@types/ncp": "^2.0.5"
+  }
+}
