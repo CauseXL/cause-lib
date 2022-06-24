@@ -28,6 +28,14 @@ type highfen = KebabCase<"HelloWorld">; // hello-world
 type className = BEM<'btn', ['price', 'alert'], ['blue', 'red']>;
 type a = StartsWith<'abc', 'ac'> // expected to be false
 type aa = EndWith<"abc", "bc">; // expected to be true
+type result = Split<'Hi! How are you?', ' '>  // should be ['Hi!', 'How', 'are', 'you?']
 
+type Split<
+  T extends string,
+  U extends string,
+  R extends string[] = []
+> = T extends `${infer A}${U}${infer B}`
+  ? Split<B, U, [...R, A]>
+  : [...R, T];
 
 export {};
