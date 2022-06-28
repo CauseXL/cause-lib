@@ -20,6 +20,22 @@ type LookUp<T, U> = T extends {
   P extends U ? T : never
 ) : never
 
+type RequiredByKeys<T extends {}, U extends keyof T> = {
+  [P in Exclude<keyof T, U>]: T[P];
+} & Partial<{
+  [P in U]: T[P];
+}>;
+
+// 新的type有never
+type OmitByType1<T, U> = {
+  [P in keyof T]: T[P] extends U ? never : T[P];
+};
+
+// 没有never
+type OmitByType<T, U> = {
+  [P in keyof T as T[P] extends U ? never : P]: T[P];
+};
+
 // * ------------------------------------------------
 
 type foo = {
@@ -62,5 +78,23 @@ interface Dog {
 
 type MyDog = LookUp<Cat | Dog, 'dog'> // expected to be `Dog`
 
+interface User {
+  name?: string;
+  age?: number;
+  address?: string;
+}
+
+type UserRequiredName = RequiredByKeys<User, "name">; 
+type aaa = Pick<User, Exclude<keyof User, "name">>
+
+type OmitBoolean = OmitByType<
+  {
+    name: string;
+    count: number;
+    isReadonly: boolean;
+    isEnable: boolean;
+  },
+  boolean
+>;
 
 export {};
