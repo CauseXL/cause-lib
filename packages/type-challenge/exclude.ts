@@ -9,4 +9,17 @@ type MyExtract<T, K> = T extends K ? T : never;
 
 type B = MyExtract<"a" | "b" | "c", "a" | "f">;
 
+interface Example {
+  a: string;
+  b: number;
+  c: number;
+  d: string;
+}
+
+type FilterType<T, U> = {
+  [K in keyof T as T[K] extends U ? K : never]: T[K];
+}
+
+type newExample = FilterType<Example, string>
+
 export {}
