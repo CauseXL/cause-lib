@@ -119,7 +119,7 @@ const commitWork = (fiber) => {
  *「处理一下没有DOM的fiber」
  * 删除情况下，不断的向下找，直到找到有dom的子节点
  */
- function commitDeletion(fiber, domParent) {
+function commitDeletion(fiber, domParent) {
   if (fiber.dom) {
     domParent.removeChild(fiber.dom)
   } else {
