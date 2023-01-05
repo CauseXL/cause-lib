@@ -3,6 +3,8 @@ type MyExclude<T, K extends T> = T extends K ? never : T;
 type ALL = 'a' | 'b' | 'c';
 type A = MyExclude<ALL, "c">;
 
+type ccc = 'a' | 'b' | 'c' extends 'c' ? 'aa' : 'bb';
+
 // * ------------------------------------------------ 
 
 type MyExtract<T, K> = T extends K ? T : never;

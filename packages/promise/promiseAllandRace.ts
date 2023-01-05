@@ -34,4 +34,3 @@ export const myPromiseResolve = (tasks: Promise<any>[]) => {
     }
   })
 }
-
