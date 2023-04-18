@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "api-server": "(cd projects/server && yarn && yarn start)",
+    "app1": "(cd projects/app1 && yarn && yarn dev --port 3301)",
+    "app2": "(cd projects/app2 && yarn && yarn dev --port 3302)",
+    "app3": "(cd projects/app3 && yarn && yarn dev --port 3303)",
+    "app3-redux": "(cd projects/app3-redux && yarn && yarn dev --port 3304)",
+    "app3-mobx": "(cd projects/app3-mobx && yarn && yarn dev --port 3305)",
+    "app3-rxjs": "(cd projects/app3-rxjs && yarn && yarn dev --port 3306)",
+    "open": "open http://localhost:3301/",
+    "start": "npm-run-all -l -p api-server app1 app2 app3 app3-redux app3-mobx app3-rxjs"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "@types/prettier": "^2.3.2",
+    "prettier": "^2.3.2",
+    "prettier-plugin-organize-imports": "^2.3.3",
+    "typescript": "^4.4.2"
+  }
+}

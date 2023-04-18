@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"name": "api-server",
+			"path": "./projects/server"
+		},
+		{
+			"name": "app1-basic-logic",
+			"path": "./projects/app1"
+		},
+		{
+			"name": "app2-basic-style-and-fake-dalay",
+			"path": "./projects/app2"
+		},
+		{
+			"name": "app3-simply-organize-code",
+			"path": "./projects/app3"
+		},
+		{
+			"name": "app3-with-redux",
+			"path": "./projects/app3-redux"
+		},
+		{
+			"name": "app3-with-mobx",
+			"path": "./projects/app3-mobx"
+		},
+		{
+			"name": "app3-with-rxjs",
+			"path": "./projects/app3-rxjs"
+		},
+		{
+			"name": "react-ui-pattern",
+			"path": "./"
+		}
+	],
+	"settings": {}
+}
